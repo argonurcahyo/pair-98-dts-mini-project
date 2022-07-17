@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/Home';
 import Footer from './components/Footer';
 import './App.css'
+import MovieDetail from './components/MovieDetail';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/movie/:movieId" element={<MovieDetail />} />
           </Routes>
         </BrowserRouter>
       </div>

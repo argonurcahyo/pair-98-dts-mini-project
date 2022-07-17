@@ -34,7 +34,18 @@ body {
 
 @import url('@fortawesome/fontawesome-free/css/fontawesome.min.css');
 
+* {
+  box-sizing: border-box;
+}
+
 .nav {
+  height: 100%;
+  width: 100%;
+  background-color: #141414;
+  position: relative;
+  padding: 10px 60px;
+  font-size: 14px;
+
   /* Auto layout */
 
   /* display: flex;
@@ -53,20 +64,6 @@ body {
 
   /* background: #141414;
   margin-bottom: 10px; */
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.nav {
-  height: 100%;
-  width: 100%;
-  margin-bottom: 10px;
-  background-color: #141414;
-  position: relative;
-  padding: 10px 60px;
-  font-size: 14px;
 
 }
 
@@ -188,4 +185,74 @@ body {
 
 .copyright {
   font-size: 10px;
+  margin-top: 10px;
+}
+
+.content {
+  background-color: #201F1F;
+  color: #E5E5E5;
+  margin: 0px;
+  padding: 20px 5%;
+}
+
+.popular {
+  margin-bottom: 15px;
+}
+
+.new-movie {
+  margin-bottom: 15px;
+}
+
+.top-rated {
+  margin-bottom: 15px;
+}
+
+.user-list {
+  margin-bottom: 15px;
+}
+
+.btn-footer {
+  /* Service Code */
+  background-color: #141414;
+  border: 1px solid #808080;
+  /* Gray */
+  color: #808080;
+  /* Inside auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px 15px;
+  font-size: 12px;
+
+}
+
+.movie-grid {
+  display: flex;
+  justify-items: auto;
+  width: 100%;
+}
+
+.movie-grid .movie-card {
+  margin-right: 10px;
+}
+
+.movie-card img {
+  max-height: 200px;
+}
+
+.movie-description {
+  padding: 15px;
+}
+
+.overview {
+  font-size: .8rem;
+}
+
+.content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
 }

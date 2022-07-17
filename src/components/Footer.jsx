@@ -29,6 +29,7 @@ const Footer = () => {
                     <li key={i}>{l}</li>
                 ))}
             </ul>
+            <button className='btn-footer'>Service Code</button>
             <div className='copyright'>{copyright}</div>
         </div>
     )

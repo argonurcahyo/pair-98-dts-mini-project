@@ -1,10 +1,16 @@
 import React from 'react'
-import Popular from './Popular'
+import NewMovie from './NewMovie'
+import PopularMovie from './PopularMovie'
+import TopRatedMovie from './TopRatedMovie'
+import UserList from './UserList'
 
 const Home = () => {
     return (
-        <div>
-            <Popular/>
+        <div className='home'>
+            <PopularMovie />
+            <NewMovie />
+            <TopRatedMovie />
+            <UserList />
         </div>
     )
 }
