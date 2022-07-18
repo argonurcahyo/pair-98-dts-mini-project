@@ -33,8 +33,8 @@ const PopularMovie = () => {
             <MovieCard movie={movie} index={i} />
           ))}
         </div>}
+
     </div>
   )
 }
-
 export default PopularMovie

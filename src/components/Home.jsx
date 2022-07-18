@@ -6,11 +6,13 @@ import UserList from './UserList'
 
 const Home = () => {
     return (
-        <div className='home'>
-            <PopularMovie />
-            <NewMovie />
-            <TopRatedMovie />
-            <UserList />
+        <div className='content'>
+            <div className='home'>
+                <PopularMovie />
+                <NewMovie />
+                <TopRatedMovie />
+                <UserList />
+            </div>
         </div>
     )
 }

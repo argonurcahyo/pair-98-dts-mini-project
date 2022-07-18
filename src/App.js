@@ -1,26 +1,42 @@
 import * as React from 'react'
-import Navbar from './components/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/Home';
-import Footer from './components/Footer';
 import './App.css'
 import MovieDetail from './components/MovieDetail';
+import Login from './components/Login';
+import { WithoutNav } from './layout/WithoutNav';
+import { WithNav } from './layout/WithNav';
+import Register from './components/Register';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <div className='content'>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/movie/:movieId" element={<MovieDetail />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-      <Footer />
-    </div>
-
+    <BrowserRouter>
+      <Routes>
+        <Route element={<WithoutNav />}>
+          <Route path="/login"
+            element={
+              <ProtectedRoute loginOnly={false}>
+                <Login />
+              </ProtectedRoute>
+            } />
+          <Route path="/register"
+            element={
+              <ProtectedRoute loginOnly={false}>
+                <Register />
+              </ProtectedRoute>
+            } />
+        </Route>
+        <Route element={<WithNav />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/movie/:movieId" element={
+            <ProtectedRoute>
+              <MovieDetail />
+            </ProtectedRoute>
+          } />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

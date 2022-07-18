@@ -40,18 +40,21 @@ const MovieDetail = () => {
 
 
     return (
-        <div className='movie-detail'>
-            <a href="/">Back</a>
-            <h1>{detail.title}</h1>
-            <img
-                style={{ width: "100%" }}
-                src={`${BASE_IMG_URL}${detail.backdrop_path}`}
-                alt={detail.title} />
-            <div className='movie-description'>
-                <p>Description</p>
-                <span className="overview">
-                    {detail.overview}
-                </span>
+        <div className='content'>
+            <div className='movie-detail'>
+                <a href="/">Back</a>
+                <h1>{detail.title}</h1>
+                <div className='movie-backdrop'>
+                    <img
+                        src={`${BASE_IMG_URL}${detail.backdrop_path}`}
+                        alt={detail.title} />
+                </div>
+                <div className='movie-description'>
+                    <p>Description</p>
+                    <span className="overview">
+                        {detail.overview}
+                    </span>
+                </div>
             </div>
         </div>
     )
