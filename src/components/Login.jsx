@@ -2,6 +2,8 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../config/firebase'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 const Login = () => {
  const navigate = useNavigate()
@@ -39,8 +41,8 @@ const Login = () => {
        <input type="password" name="password" id="password" placeholder='Password' />
       </div>
       <button className='btn-form' type='submit'>
-       {loading ? "Signing in..." : "Login"}
-       </button>
+       {loading ? <>Signing in  <FontAwesomeIcon className='spinner' icon={faSpinner} /></> : <>Login </>}
+      </button>
       <div className='register-text'>
        Don't have account yet? <Link to="/register">Register now!</Link>
       </div>

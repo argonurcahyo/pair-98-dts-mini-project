@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import tmdb from '../apis/tmdb'
+import MovieVideos from './MovieVideos'
+import RecommendMovies from './RecommendMovies'
+import SimilarMovies from './SimilarMovies'
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/original/'
+const LOADING_IMG_URL = 'https://c.tenor.com/aEjYE139N7wAAAAC/discord-loader.gif'
 
 const MovieDetail = () => {
     let { movieId } = useParams();
 
     const [detail, setDetail] = useState({})
+    const [loading, setLoading] = useState(true)
 
     const fetchDetail = async () => {
         try {
@@ -29,15 +34,19 @@ const MovieDetail = () => {
         }
     }
 
-    const similarMovies = async () => {
+    // const similarMovies = async () => {
 
-    }
+    // }
 
     useEffect(() => {
         fetchDetail()
-        fetchImages()
-    }, []);
+        // fetchImages()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [movieId]);
 
+    const handleLoaded = () => {
+        setLoading(false)
+    }
 
     return (
         <div className='content'>
@@ -45,9 +54,15 @@ const MovieDetail = () => {
                 <a href="/">Back</a>
                 <h1>{detail.title}</h1>
                 <div className='movie-backdrop'>
-                    <img
-                        src={`${BASE_IMG_URL}${detail.backdrop_path}`}
-                        alt={detail.title} />
+                    <div style={{ display: loading ? "block" : "none" }}>
+                        <img src={LOADING_IMG_URL} alt="loading" />
+                    </div>
+                    <div style={{ display: loading ? "none" : "block" }}>
+                        <img
+                            src={`${BASE_IMG_URL}${detail.backdrop_path}`}
+                            alt={detail.title}
+                            onLoad={handleLoaded} />
+                    </div>
                 </div>
                 <div className='movie-description'>
                     <p>Description</p>
@@ -55,6 +70,9 @@ const MovieDetail = () => {
                         {detail.overview}
                     </span>
                 </div>
+                <SimilarMovies movieId={movieId} />
+                <RecommendMovies movieId={movieId} />
+                <MovieVideos movieId={movieId} />
             </div>
         </div>
     )

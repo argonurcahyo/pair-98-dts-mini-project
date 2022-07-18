@@ -2,6 +2,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { auth } from '../config/firebase';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 const Register = () => {
  const navigate = useNavigate();
@@ -16,6 +18,7 @@ const Register = () => {
 
   try {
    setLoading(true)
+   // eslint-disable-next-line no-unused-vars
    const { user } = await createUserWithEmailAndPassword(auth, email, password)
    navigate('/')
   } catch (error) {
@@ -36,8 +39,8 @@ const Register = () => {
        <input type="password" name="password" id="password" placeholder='Password' />
       </div>
       <button className='btn-form' type='submit'>
-      {loading ? "Registering..." : "Register"}
-       </button>
+       {loading ? <>Registering... <FontAwesomeIcon className='spinner' icon={faSpinner} /></> : "Register"}
+      </button>
       <div className='register-text'>
        Already have an account? <Link to="/login">Login here!</Link>
       </div>

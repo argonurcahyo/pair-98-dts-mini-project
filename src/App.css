@@ -228,19 +228,25 @@ body {
 
 .movie-grid {
   display: flex;
-  overflow: overlay;
+  overflow-x: scroll;
+  overflow-y: visible;
   width: 100%;
+
 }
 
 .movie-grid .movie-card {
-  margin-right: 10px;
-  margin-bottom: 18px;
-
+  margin: 18px 5px
 }
 
 .movie-card img {
   max-height: 200px;
   border-radius: 5px;
+
+}
+
+.movie-card img:hover {
+  cursor: pointer;
+
 }
 
 .movie-description {
@@ -324,6 +330,11 @@ html {
   text-transform: uppercase;
 }
 
+.btn-form:hover {
+  cursor: pointer;
+  background: #be0711;
+}
+
 .register-text {
   text-align: center;
   margin-top: 5px;
@@ -399,4 +410,41 @@ html {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.spinner {
+  animation: spin infinite 5s linear;
+
+  /*You can increase or decrease the timer (5s) to 
+   increase or decrease the speed of the spinner*/
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.video-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
