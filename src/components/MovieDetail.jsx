@@ -1,4 +1,4 @@
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -66,9 +66,15 @@ const MovieDetail = () => {
                     </div>
                     <div style={{ display: loading ? "none" : "block" }}>
                         <h1>{detail.title}</h1>
-                        {/* <button className='btn video-play'>
-                            <FontAwesomeIcon icon={faCirclePlay} /> Play Video
-                        </button> */}
+                        <div className='btn-group movie'>
+                            <button className='btn add'>
+                                <FontAwesomeIcon icon={faPlus} /> My List
+                            </button>
+                            <button className='btn video-play'>
+                                <FontAwesomeIcon icon={faCirclePlay} /> Play Video
+                            </button>
+                        </div>
+
                         <img
                             src={`${BASE_IMG_URL}${detail.backdrop_path}`}
                             alt={detail.title}

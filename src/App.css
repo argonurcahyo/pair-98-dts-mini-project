@@ -267,15 +267,43 @@ body {
   font-size: .8rem;
 }
 
-.btn.video-play {
+.btn-group.movie {
   position: relative;
+  width: fit-content;
   top: 200px;
-  left: 200px;
-  padding: 10px 15px;
+  left: 100px;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+}
+
+.movie-backdrop:hover .btn-group.movie {
+  opacity: 1;
+}
+
+.btn-group .btn {
+  font-size: 0.8rem;
+  margin-right: 5px;
+  padding: 0.5rem .8rem;
   font-weight: 700;
   font-family: 'Inter';
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #cdcdcd;
+}
+
+.btn.add {
+  background-color: #5d5d5d;
+  color: #E5E5E5
+}
+
+.btn.add:hover {
+  background-color: #141414;
+  color: #E5E5E5
 }
 
 .content a {
