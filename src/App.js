@@ -30,9 +30,9 @@ function App() {
         <Route element={<WithNav />}>
           <Route path="/" element={<Home />} />
           <Route path="/movie/:movieId" element={
-            <ProtectedRoute>
-              <MovieDetail />
-            </ProtectedRoute>
+            // <ProtectedRoute>
+            <MovieDetail />
+            // </ProtectedRoute>
           } />
         </Route>
       </Routes>

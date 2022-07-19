@@ -253,6 +253,10 @@ body {
   padding: 15px;
 }
 
+.movie-additional-content {
+  padding: 15px;
+}
+
 .movie-backdrop img {
   max-width: 800px;
   width: 100%;
@@ -261,6 +265,17 @@ body {
 
 .overview {
   font-size: .8rem;
+}
+
+.btn.video-play {
+  position: relative;
+  top: 200px;
+  left: 200px;
+  padding: 10px 15px;
+  font-weight: 700;
+  font-family: 'Inter';
+  border: none;
+  border-radius: 5px;
 }
 
 .content a {
@@ -430,10 +445,23 @@ html {
 }
 
 .video-grid {
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: visible;
+  width: 100%;
 }
 
-.video-responsive {
+.video-grid .video-responsive {
+  margin: 18px 5px;
+  border-radius: 15px;
+}
+
+.video-responsive iframe {
+  border-radius: 10px;
+  height: 200px;
+}
+
+/* .video-responsive {
   overflow: hidden;
   padding-bottom: 56.25%;
   margin-bottom: 10px;
@@ -447,4 +475,4 @@ html {
   height: 100%;
   width: 100%;
   position: absolute;
-}
+} */

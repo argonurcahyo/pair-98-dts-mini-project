@@ -21,6 +21,7 @@ const RecommendMovies = ({ movieId }) => {
 
   useEffect(() => {
     fetchSimilar()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movieId]);
 
   return (

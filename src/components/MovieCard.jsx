@@ -22,7 +22,12 @@ const MovieCard = ({ movie, index }) => {
    className='movie-card'>
    <div className='overlay'></div>
    {movie && (
-    <img src={`${BASE_IMG_URL}${movie.poster_path}`} alt={movie.title} />
+
+    <img
+     src={`${BASE_IMG_URL}${movie.poster_path}`}
+     alt={movie.title} />
+
+
    )}
   </motion.div>
  )

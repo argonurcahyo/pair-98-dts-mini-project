@@ -58,9 +58,9 @@ const NavbarRight = () => {
   return (
     <div className='nav-links right'>
       {user ?
-        <div class="dropdown">
-          <button class="dropbtn">{user.email.split("@")[0]}</button>
-          <div class="dropdown-content">
+        <div className="dropdown">
+          <button className="dropbtn">{user.email.split("@")[0]}</button>
+          <div className="dropdown-content">
             <a href="/login" onClick={onLogout}>Logout</a>
           </div>
         </div> :
