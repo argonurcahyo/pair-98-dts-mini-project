@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import tmdb from '../apis/tmdb'
 import MovieCard from './MovieCard'
 import { motion } from 'framer-motion'
+import MovieSlider from './MovieSlider'
 
 const SimilarMovies = ({ movieId }) => {
   const [movies, setMovies] = useState([])
@@ -28,12 +29,9 @@ const SimilarMovies = ({ movieId }) => {
   return (
     <div className='popular'>
       <h3 style={{ marginTop: '0px' }}>Similar Movies</h3>
-      {movies &&
-        <motion.div className='movie-grid'>
-          {movies.map((movie, i) => (
-            <MovieCard movie={movie} index={i} />
-          ))}
-        </motion.div>}
+      {movies && (
+        <MovieSlider data={movies} />
+      )}
 
     </div>
   )

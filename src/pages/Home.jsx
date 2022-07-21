@@ -1,8 +1,8 @@
 import React from 'react'
-import NewMovie from './NewMovie'
-import PopularMovie from './PopularMovie'
-import TopRatedMovie from './TopRatedMovie'
-import UserList from './UserList'
+import NewMovie from '../components/NewMovie'
+import PopularMovie from '../components/PopularMovie'
+import TopRatedMovie from '../components/TopRatedMovie'
+import UserList from '../components/UserList'
 
 const Home = () => {
     return (

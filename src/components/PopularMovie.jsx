@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import tmdb from '../apis/tmdb';
 import MovieCard from './MovieCard'
+import MovieSlider from './MovieSlider';
+import SimpleSlider from './SimpleSlider';
 
 const PopularMovie = () => {
   const [popular, setPopular] = useState([]);
@@ -27,13 +29,9 @@ const PopularMovie = () => {
   return (
     <div className='popular'>
       <h1 style={{ marginTop: '0px' }}>Popular</h1>
-      {popular &&
-        <div className='movie-grid'>
-          {popular.map((movie, i) => (
-            <MovieCard movie={movie} index={i} />
-          ))}
-        </div>}
-
+      {popular && (
+        <MovieSlider data={popular} />
+      )}
     </div>
   )
 }

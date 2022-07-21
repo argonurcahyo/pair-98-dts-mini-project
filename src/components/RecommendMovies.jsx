@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import tmdb from '../apis/tmdb'
 import MovieCard from './MovieCard'
+import MovieSlider from './MovieSlider'
 
 const RecommendMovies = ({ movieId }) => {
   const [movies, setMovies] = useState([])
@@ -21,18 +22,15 @@ const RecommendMovies = ({ movieId }) => {
 
   useEffect(() => {
     fetchSimilar()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movieId]);
 
   return (
     <div className='popular'>
       <h3 style={{ marginTop: '0px' }}>Recommendations</h3>
-      {movies &&
-        <div className='movie-grid'>
-          {movies.map((movie, i) => (
-            <MovieCard movie={movie} index={i} />
-          ))}
-        </div>}
+      {movies && (
+        <MovieSlider data={movies} />
+      )}
 
     </div>
   )

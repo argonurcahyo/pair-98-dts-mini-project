@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import tmdb from '../apis/tmdb'
-import MovieVideos from './MovieVideos'
-import RecommendMovies from './RecommendMovies'
-import SimilarMovies from './SimilarMovies'
+import MovieVideos from '../components/MovieVideos'
+import RecommendMovies from '../components/RecommendMovies'
+import SimilarMovies from '../components/SimilarMovies'
 import { faCirclePlay } from '@fortawesome/free-regular-svg-icons';
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500/'

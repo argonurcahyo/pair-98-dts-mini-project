@@ -1,12 +1,14 @@
 import * as React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './components/Home';
+import Home from './pages/Home';
 import './App.css'
-import MovieDetail from './components/MovieDetail';
-import Login from './components/Login';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import MovieDetail from './pages/MovieDetail';
+import Login from './pages/Login';
 import { WithoutNav } from './layout/WithoutNav';
 import { WithNav } from './layout/WithNav';
-import Register from './components/Register';
+import Register from './pages/Register';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
