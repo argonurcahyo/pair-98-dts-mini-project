@@ -1,23 +1,26 @@
 import { faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useEffect, useRef, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import tmdb from '../apis/tmdb'
 import MovieVideos from '../components/MovieVideos'
 import RecommendMovies from '../components/RecommendMovies'
 import SimilarMovies from '../components/SimilarMovies'
 import { faCirclePlay } from '@fortawesome/free-regular-svg-icons';
 import Moment from 'react-moment'
+import { GlobalContext } from '../context/GlobalContext'
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500/'
 const LOADING_IMG_URL = 'https://c.tenor.com/aEjYE139N7wAAAAC/discord-loader.gif'
 
 const MovieDetail = () => {
   let { movieId } = useParams();
+  const { addMovieToMovielist, removeMovieFromMovielist, movielist } = useContext(GlobalContext)
 
   const [detail, setDetail] = useState({})
   const [loading, setLoading] = useState(true)
 
+  let inList = movielist.find(m => m.id === parseInt(movieId))
 
   const fetchDetail = async () => {
     try {
@@ -38,8 +41,7 @@ const MovieDetail = () => {
     window.scrollTo(0, 0)
     setLoading(true)
     fetchDetail()
-
-    // fetchImages()
+    console.log(movieId)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movieId]);
 
@@ -67,9 +69,16 @@ const MovieDetail = () => {
                 {detail.title}
               </div>
               <div className='btn-group'>
-                <button className='btn add'>
-                  <FontAwesomeIcon icon={faPlus} /> My List
-                </button>
+                <div style={{ display: inList ? "block" : "none" }}>
+                  <button className='btn add' onClick={() => removeMovieFromMovielist(parseInt(movieId))}>
+                    Remove
+                  </button>
+                </div>
+                <div style={{ display: inList ? "none" : "block" }}>
+                  <button className='btn add' onClick={() => addMovieToMovielist(detail)}>
+                    <FontAwesomeIcon icon={faPlus} /> My List
+                  </button>
+                </div>
                 <button className='btn video-play' onClick={executeScroll}>
                   <FontAwesomeIcon icon={faCirclePlay} /> Play Video
                 </button>
@@ -89,14 +98,17 @@ const MovieDetail = () => {
 
             {detail?.credits?.crew?.length > 0 && (
               <>Directed By : {detail?.credits?.crew?.filter((a) => a.job === "Director")
-                .map((a) => a.name).join(",")}</>
+                .map((a) => <Link to={`/director/${a.id}`}>{a.name} </Link>)}</>
             )}
             <br />
             {detail?.genres?.length > 0 && (
-              <>Genre : {detail?.genres.map((g) => g.name).join(', ')}</>
+              <>Genre : {detail?.genres.map((g) => <Link to={`/genre/${g.id}`}>{g.name}, </Link>)}</>
+            )}<br />
+            {detail?.credits?.cast?.length > 0 && (
+              <>Cast : {detail?.credits?.cast?.slice(0, 10).map(c => <Link to={`/actor/${c.id}`}>{c.name}, </Link>)}</>
             )}<br />
             {detail?.keywords?.keywords?.length > 0 && (
-              <>Keyword : {detail?.keywords.keywords.map(k => k.name).join(', ')}</>
+              <>Keyword : {detail?.keywords.keywords.map(k => <Link to={`/tag/${k.id}`}>{k.name}, </Link>)}</>
             )}
             <p>Description</p>
             <span className="overview">
@@ -113,11 +125,10 @@ const MovieDetail = () => {
 
           <div className='movie-additional-content' style={{ display: loading ? "none" : "block" }}>
             <div ref={elRef} className='movie-video'>
-
+              <MovieVideos movieId={movieId} />
             </div>
             <SimilarMovies movieId={movieId} />
             <RecommendMovies movieId={movieId} />
-            <MovieVideos movieId={movieId} />
           </div>
         </div>
       </div>

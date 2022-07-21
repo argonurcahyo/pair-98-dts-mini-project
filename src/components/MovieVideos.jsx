@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import tmdb from '../apis/tmdb';
 
-
 const MovieVideos = ({ movieId }) => {
   const [videos, setVideos] = useState([])
 
@@ -40,7 +39,7 @@ const MovieVideos = ({ movieId }) => {
   )
 }
 
-const YtVideo = ({ video }) => (
+export const YtVideo = ({ video }) => (
   <div className="video-responsive">
     <iframe
       // width="853"

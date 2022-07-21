@@ -1,18 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { GlobalContext } from '../context/GlobalContext'
 import MovieSlider from './MovieSlider'
 
-const UserList = ({ data }) => {
+const UserList = () => {
+    const { movielist } = useContext(GlobalContext)
+
     return (
-        <div className='container'>
-            <div className="home">
-                <div className='list'>
-                    <h1 style={{ marginTop: '0px' }}>My List</h1>
-                    {data ? (
-                        <MovieSlider data={data} />
-                    ) : "No Movie yet"}
-                </div>
-            </div>
+        <div className='list'>
+            <h1 style={{ marginTop: '0px' }}>My List</h1>
+            {movielist ? (
+                <MovieSlider data={movielist} />
+            ) : "No Movie yet"}
         </div>
+
     )
 }
 

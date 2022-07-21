@@ -57,8 +57,8 @@ const Navbar = () => {
 const NavbarLeft = () => {
   return (
     <div className="nav-links">
-      {pages.map((p, i) => (
-        <a href={p.link} key={i}>{p.name}</a>
+      {pages?.map((p, i) => (
+        <Link to={p?.link} key={i}>{p?.name}</Link>
       ))}
     </div >
   )

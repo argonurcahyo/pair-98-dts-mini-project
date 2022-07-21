@@ -238,8 +238,6 @@ body {
 }
 
 .movie-card img {
-  max-height: 300px;
-  min-height: 175px;
   border-radius: 5px;
 
 }
@@ -273,11 +271,9 @@ body {
   object-fit: cover;
 }
 
-.overview {
-  font-size: .8rem;
-}
-
 .movie-title {
+  color: #fff;
+  text-shadow: 2px 2px #ff0000;
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 10px;
