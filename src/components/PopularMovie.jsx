@@ -27,7 +27,7 @@ const PopularMovie = () => {
   return (
     <>
       <div className='popular'>
-        <h1 style={{ marginTop: '0px' }}>Popular</h1>
+        <h1 style={{ marginTop: '0px' }}>Popular Movies</h1>
         {popular && (
           <MovieSlider data={popular} />
         )}

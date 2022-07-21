@@ -4,7 +4,28 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 
-const pages = ['Home', 'Series', 'Movies', 'New and Popular', 'My List'];
+const pages = [
+  {
+    name: 'Home',
+    link: '/'
+  },
+  {
+    name: 'Series',
+    link: '/tv'
+  },
+  {
+    name: 'Movies',
+    link: '/movie'
+  },
+  {
+    name: 'New and Popular',
+    link: '/newpopular'
+  },
+  {
+    name: 'My List',
+    link: '/list'
+  },
+];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Navbar = () => {
@@ -37,7 +58,7 @@ const NavbarLeft = () => {
   return (
     <div className="nav-links">
       {pages.map((p, i) => (
-        <a href='/' key={i}>{p}</a>
+        <a href={p.link} key={i}>{p.name}</a>
       ))}
     </div >
   )

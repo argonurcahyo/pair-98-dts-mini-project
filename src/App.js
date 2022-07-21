@@ -10,6 +10,11 @@ import { WithoutNav } from './layout/WithoutNav';
 import { WithNav } from './layout/WithNav';
 import Register from './pages/Register';
 import ProtectedRoute from './components/ProtectedRoute';
+import TVSeries from './pages/TVSeries';
+import Movies from './pages/Movies';
+import TVDetail from './pages/TVDetail';
+import NewPopular from './pages/NewPopular';
+import UserList from './components/UserList';
 
 function App() {
   return (
@@ -31,11 +36,16 @@ function App() {
         </Route>
         <Route element={<WithNav />}>
           <Route path="/" element={<Home />} />
+          <Route exact path="/movie" element={<Movies />} />
           <Route path="/movie/:movieId" element={
             // <ProtectedRoute>
             <MovieDetail />
             // </ProtectedRoute>
           } />
+          <Route exact path="/tv" element={<TVSeries />} />
+          <Route path="/tv/:tvId" element={<TVDetail />} />
+          <Route path="/newpopular" element={<NewPopular />} />
+          <Route path="/list" element={<UserList />} />
         </Route>
       </Routes>
     </BrowserRouter>

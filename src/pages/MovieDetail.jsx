@@ -57,9 +57,7 @@ const MovieDetail = () => {
   return (
     <div className='container'>
       <div className='movie-detail'>
-
         <div className='movie-backdrop'>
-
           <div style={{ display: loading ? "block" : "none" }}>
             <img src={LOADING_IMG_URL} alt="loading" />
           </div>
