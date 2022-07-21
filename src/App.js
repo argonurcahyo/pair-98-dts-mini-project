@@ -34,10 +34,13 @@ function App() {
               <MovieDetail />
             </ProtectedRoute>
           } />
+          <Route path="/movie/:movieId/movie-play" element={
+              <Home />
+          } /> 
         </Route>
       </Routes>
     </BrowserRouter>
-  );
+  ); 
 }
 
 export default App;

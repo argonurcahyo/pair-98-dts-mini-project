@@ -4,7 +4,7 @@ import tmdb from '../apis/tmdb'
 
 const BASE_IMG_URL = 'https://image.tmdb.org/t/p/original/'
 
-const MovieDetail = () => {
+const MoviePlay = () => {
     let { movieId } = useParams();
 
     const [detail, setDetail] = useState({})
@@ -50,8 +50,7 @@ const MovieDetail = () => {
                         alt={detail.title} />
                         <h1>{detail.title}</h1>
                         <div>
-                            <button class="button-play">Play</button>
-                            <button class="button-more">More Information</button>
+                           
                         </div>
                 </div>
             
@@ -66,4 +65,4 @@ const MovieDetail = () => {
     )
 }
 
-export default MovieDetail
+export default MoviePlay
