@@ -248,9 +248,50 @@ body {
 }
 
 .movie-backdrop img {
+  position: relative;
   max-width: 800px;
   width: 100%;
   border-radius: 5px;
+}
+
+.movie-backdrop .button-play {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.movie-backdrop .button-play:hover {
+  background-color: blue;
+  color: white;
+}
+
+.movie-backdrop .button-more {
+  position: absolute;
+  top: 50.7%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.movie-backdrop .button-more:hover {
+  background-color: blue;
+  color: white;
 }
 
 .overview {
@@ -399,4 +440,22 @@ html {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.button-play {
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+h1{
+  position: relative;
+  left: 40px;
+  top: 0px;
 }
