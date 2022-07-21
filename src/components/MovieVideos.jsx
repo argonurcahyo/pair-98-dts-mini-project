@@ -13,7 +13,6 @@ const MovieVideos = ({ movieId }) => {
         }
       });
       setVideos(fetchData.data.results);
-      console.log(fetchData.data.results)
     } catch (error) {
       console.log(error);
       setVideos([]);
@@ -31,8 +30,8 @@ const MovieVideos = ({ movieId }) => {
         <>
           <h3>Videos</h3>
           <div className="video-grid">
-            {videos.map((v) => (
-              <YtVideo video={v} />
+            {videos.slice(0, 5).map((v, i) => (
+              <YtVideo video={v} key={i} />
             ))}
           </div>
         </>

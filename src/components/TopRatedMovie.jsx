@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import tmdb from '../apis/tmdb'
-import MovieCard from './MovieCard'
 import MovieSlider from './MovieSlider'
 
 const TopRatedMovie = () => {

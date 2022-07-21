@@ -70,7 +70,7 @@ const MovieSlider = ({ data }) => {
   <div>
    <Slider {...settings}>
     {data && data.map((movie, i) => (
-     <MovieCard movie={movie} index={i} />
+     <MovieCard key={i} movie={movie} index={i} />
     ))}
    </Slider>
   </div>

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import tmdb from '../apis/tmdb'
-import MovieCard from './MovieCard'
-import { motion } from 'framer-motion'
 import MovieSlider from './MovieSlider'
 
 const SimilarMovies = ({ movieId }) => {

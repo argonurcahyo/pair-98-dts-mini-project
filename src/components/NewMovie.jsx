@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import tmdb from '../apis/tmdb'
-import MovieCard from './MovieCard'
 import MovieSlider from './MovieSlider'
 
 const NewMovie = () => {
@@ -28,7 +27,7 @@ const NewMovie = () => {
       <div className='new-movie'>
          <h1 style={{ marginTop: '0px' }}>New Movie</h1>
          {newMovie && (
-            <MovieSlider data={newMovie}/>
+            <MovieSlider data={newMovie} />
          )}
       </div>
    )

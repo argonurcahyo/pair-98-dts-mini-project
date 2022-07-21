@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import tmdb from '../apis/tmdb'
-import MovieCard from './MovieCard'
 import MovieSlider from './MovieSlider'
 
 const RecommendMovies = ({ movieId }) => {
