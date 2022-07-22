@@ -1,10 +1,16 @@
 import Slider from 'react-slick';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import MovieCard from './MovieCard';
 
 const MovieSlider = ({ data }) => {
+ const [infinite, setInfinite] = useState(false)
+
+ useEffect(() => {
+  data.length > 12 ? setInfinite(true) : setInfinite(false)
+ }, [data])
+
  const settings = {
-  infinite: true,
+  infinite: infinite,
   slidesToShow: 12,
   slidesToScroll: 1,
   responsive: [

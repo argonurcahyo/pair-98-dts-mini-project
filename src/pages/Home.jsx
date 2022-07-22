@@ -3,6 +3,7 @@ import { MovieCarousel } from '../components/MovieCarousel'
 import NewMovie from '../components/NewMovie'
 import PopularMovie from '../components/PopularMovie'
 import TopRatedMovie from '../components/TopRatedMovie'
+import UserList from '../components/UserList'
 
 const Home = () => {
  return (
@@ -12,6 +13,7 @@ const Home = () => {
     <PopularMovie />
     <NewMovie />
     <TopRatedMovie />
+    <UserList />
    </div>
   </div>
  )

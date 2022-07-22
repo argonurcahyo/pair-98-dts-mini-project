@@ -41,7 +41,6 @@ const MovieDetail = () => {
     window.scrollTo(0, 0)
     setLoading(true)
     fetchDetail()
-    console.log(movieId)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movieId]);
 
