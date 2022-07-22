@@ -1,13 +1,9 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalContext'
 import MovieSlider from './MovieSlider'
 
 const UserList = () => {
     const { movielist } = useContext(GlobalContext)
-
-    useEffect(() => (
-        console.log(movielist)
-    ), [])
 
     return (
         <div className='list'>

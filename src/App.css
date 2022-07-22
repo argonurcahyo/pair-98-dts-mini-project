@@ -76,6 +76,8 @@ body {
   font-size: 22px;
   color: #fff;
   padding: 10px 10px 10px 10px;
+  color: red;
+  font-weight: 800;
 }
 
 .nav>.nav-btn {

@@ -15,6 +15,10 @@ import Movies from './pages/Movies';
 import TVDetail from './pages/TVDetail';
 import NewPopular from './pages/NewPopular';
 import UserList from './components/UserList';
+import Genre from './components/Genre';
+import Actor from './components/Actor';
+import Director from './components/Director';
+import Tag from './components/Tag';
 
 function App() {
   return (
@@ -51,8 +55,14 @@ function App() {
           <Route path="/list" element={
             <div className='container'>
               <div className="home">
-                <UserList /></div></div>
+                <UserList />
+              </div>
+            </div>
           } />
+          <Route path='genre/:id' element={<Genre />} />
+          <Route path='actor/:id' element={<Actor />} />
+          <Route path='director/:id' element={<Director />} />
+          <Route path='tag/:id' element={<Tag />} />
         </Route>
       </Routes>
     </BrowserRouter>
